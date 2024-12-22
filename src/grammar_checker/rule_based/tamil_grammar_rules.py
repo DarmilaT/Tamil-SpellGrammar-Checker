@@ -10,7 +10,6 @@ def check_subject_verb_agreement(sentence):
     subject = None
     verb = None
 
-    # Find the subject and verb
     for word in words:
         if word in singular_subjects or word in plural_subjects:
             subject = word
@@ -18,17 +17,17 @@ def check_subject_verb_agreement(sentence):
             verb = word
 
     if not subject or not verb:
-        return "Subject-Verb Agreement: Unable to determine subject or verb.", None
+        return "Unable to determine subject or verb.", None
 
-    # Check agreement and suggest corrections
     if subject in singular_subjects and any(verb.endswith(ending) for ending in plural_verbs):
         corrected = sentence.replace(verb, verb.rstrip("கிறார்கள்") + "கிறான்")
-        return f"Error: Singular subject '{subject}' must have a singular verb. Found '{verb}'.", corrected
+        return f"Singular subject '{subject}' must have a singular verb. Found '{verb}'.", corrected
     elif subject in plural_subjects and any(verb.endswith(ending) for ending in singular_verbs):
         corrected = sentence.replace(verb, verb.rstrip("கிறான்") + "கிறார்கள்")
-        return f"Error: Plural subject '{subject}' must have a plural verb. Found '{verb}'.", corrected
+        return f"Plural subject '{subject}' must have a plural verb. Found '{verb}'.", corrected
 
-    return "Subject-Verb Agreement: Correct.", None
+    return "Correct.", None
+
 
 # Rule 2: Habitual Case Checker
 def check_habitual_case(sentence):
@@ -38,12 +37,11 @@ def check_habitual_case(sentence):
 
     words = sentence.split()
     if any(indicator in sentence for indicator in habitual_indicators):
-        # Check if verb matches habitual (future) or present tense
         for word in words:
             if any(word.endswith(ending) for ending in habitual_verbs):
                 return "Habitual Case: Correct.", None
             elif any(word.endswith(ending) for ending in present_tense_verbs):
                 corrected = sentence.replace(word, word.rstrip("கிறேன்") + "வேன்")
-                return "Error: Verb not in habitual tense for habitual action.", corrected
+                return "Habitual Case: Error - Present tense verb used for habitual action.", corrected
 
-    return "Habitual Case: Not applicable.", None
+    return "Not applicable.", None
