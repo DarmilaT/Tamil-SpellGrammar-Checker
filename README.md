@@ -44,6 +44,7 @@ This project aims to build a Tamil Spell and Grammar Checker using a combination
 ### Grammar Checker
 
 1. **Rules Implemented**
+
    - **Habitual Tense Rule**: Ensures habitual actions follow correct tense forms
    - **Subject-Verb Agreement**: Validates that the verb matches the subject's form
    - Here is the table format with more examples for the rules implemented:
@@ -53,7 +54,7 @@ This project aims to build a Tamil Spell and Grammar Checker using a combination
    | **Habitual Tense Rule**    | நான் தினமும் ஐந்து மணிக்கு எழுந்திருப்பேன் | நான் தினமும் ஐந்து மணிக்கு எழுந்திருகிறேன் | Ensures habitual actions are in the correct future tense.     |
    | **Subject-Verb Agreement** | அவன் படித்தான்                             | அவன் படிக்கிறேன்                           | Verbs must agree with the subject in terms of tense and form. |
    | **Habitual Tense Rule**    | நான் தினமும் தேநீர் குடிப்பேன்             | நான் தினமும் தேநீர் குடித்தேன்             | Ensures habitual action of future tense with correct verb.    |
-   | **Subject-Verb Agreement** | நான் மரத்தை வெட்டினேன்                     | நான் மரத்தை வெட்டினான்                     | Ensures the subject-verb match is in the correct tense.       |
+   | **Subject-Verb Agreement** | நான் மரத்தை வெட்டினேன்                     | நான் மரத்தை வெட்டினான்                     | Verbs must agree with the subject in terms of tense and form. |
 
 2. **Approaches Used**
 
@@ -69,7 +70,6 @@ This project aims to build a Tamil Spell and Grammar Checker using a combination
 
 3. **Evaluation**
    - Models were evaluated using the same metrics as the spell checker: accuracy, precision, recall, and F1 score.
-
 
 ## Contributors
 
