@@ -1,0 +1,3 @@
+{
+  "python.analysis.extraPaths": ["./src/spell_checker/tests"]
+}
