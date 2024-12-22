@@ -1,42 +1,12 @@
 from spell_checker import SpellChecker
-from tests.spell_checker_evaluator import evaluate_spell_checker
 
 correct_words_file = r"D:\7th Semester\AI\Tamil-SpellGrammar-Checker\data\processed\extracted_words.txt"
 
-test_paragraphs_list = [
-    "ஏற்றுமதயை நம்பியுள்ள நாடுகளுகுத்தான் இதனால் பாதிப்பு. உள்நாட்டிலேயே தேவை அதிகமக உள்ள இந்தியா போன்ற மக்கள் தொகை அதிகம் கொண்ட வளரும் பொருளதர நாட்டில் பிரச்சனை ஏற்படது என்று அவர் திடவட்டமாகக் கூறினார்.",
-    "இந்த நாளில், வடலர் வள்ளலர் கோயிலில், லட்சக்ணக்கான பக்தர்கள் தரிசனம் செய்வார்கள். அருட்பருஞ் ஜோதி தனப்பெருங்கருணை என்று கோஷங்ள் முழங்க, வள்ளலரை வணங்குவார்கள். வருவோருக்கெல்லாம் அன்னதானம் தடையின்றி நடந்து கெண்டே இருக்கும்.",
-    "வர்த்தக அமைசசகத்தின் கீழ செயல்படும் சரக்கு போக்கவரத்து துறயை ஏற்கெனவ வாகன உற்பத்தியாளர் சங்க பிரதிநிதிகள் அணுகி இந்த பிரச்சனை குறித்து விவாதித்துள்லனர். பன்முக வரி விதப்பு முறை குலப்பமாக உள்ளதையும் குறிப்பிட்டுள்ளனர்.",
-    "இநதப் பேரலகியடன் ஒப்பந்தம் செய்யபட்டுள்ள படம் விரைவில் படப்பிடிப்பு தொடங்கவிருக்கிறது. இந்தப் படம் பெரும் பொருட்செலவில் தயாரிக்கவிருக்கறது. இப்படத்தின் நயகன் எனக்கு மகவும் பிடித்த நடிகர், அவர் சமயலின் சிறப்புக்கு எடுத்துக்காட்டாக விளங்குகிறார். படம் பற்றிய எதிர்பர்ப்புகள் அதிகமாக உள்ளன. படம் படப்பிடிப்பு முடிந்த பன்னர், அத மக்களுக்கு மிகவும் வரவேற்கப்படும் என நம்புறேன்.",
-    "வசஷ்ட முனிவருக்கு, எம்பெருமான் நடனக் காட்சியைக் காட்டி அருளய தலம் இது என்பதல் மேலைச் சிதம்ரம் என்றும் அழக்கப்படுகிறது"
-]
+user_input = "நடைபெறற"
 
-expected_paragraph = [
-    "ஏற்றுமதியை நம்பியுள்ள நாடுகளுக்குத்தான் இதனால் பாதிப்பு. உள்நாட்டிலேயே தேவை அதிகமாக உள்ள இந்தியா போன்ற மக்கள் தொகை அதிகம் கொண்ட வளரும் பொருளாதார நாட்டில் பிரச்சனை ஏற்படாது என்று அவர் திட்டவட்டமாகக் கூறினார்.",
-    "இந்த நாளில், வடலூர் வள்ளலார் கோயிலில், லட்சக்கணக்கான பக்தர்கள் தரிசனம் செய்வார்கள். அருட்பெருஞ் ஜோதி தனிப்பெருங்கருணை என்று கோஷங்கள் முழங்க, வள்ளலாரை வணங்குவார்கள். வருவோருக்கெல்லாம் அன்னதானம் தடையின்றி நடந்து கொண்டே இருக்கும்.",
-    "வர்த்தக அமைச்சகத்தின் கீழ் செயல்படும் சரக்கு போக்குவரத்து துறையை ஏற்கெனவே வாகன உற்பத்தியாளர் சங்க பிரதிநிதிகள் அணுகி இந்த பிரச்சினை குறித்து விவாதித்துள்ளனர். பன்முக வரி விதிப்பு முறை குழப்பமாக உள்ளதையும் குறிப்பிட்டுள்ளனர்.",
-    "இந்தப் பேரழகியுடன் ஒப்பந்தம் செய்யப்பட்டுள்ள படம் விரைவில் படப்பிடிப்பு தொடங்கவிருக்கிறது. இந்தப் படம் பெரும் பொருட்செலவில் தயாரிக்கவிருக்கிறது. இப்படத்தின் நாயகன் எனக்கு மிகவும் பிடித்த நடிகர், அவர் சமையலின் சிறப்புக்கு எடுத்துக்காட்டாக விளங்குகிறார். படம் பற்றிய எதிர்பார்ப்புகள் அதிகமாக உள்ளன. படம் படப்பிடிப்பு முடிந்த பின்னர், அது மக்களுக்கு மிகவும் வரவேற்கப்படும் என நம்புகிறேன்.",
-    "வசிஷ்ட முனிவருக்கு, எம்பெருமான் நடனக் காட்சியைக் காட்டி அருளிய தலம் இது என்பதால் மேலைச் சிதம்பரம் என்றும் அழைக்கப்படுகிறது"
-]
+spell_checker = SpellChecker(correct_words_file, user_input)
 
-# Split the text into sentences for checking
-test_sentences = [para.rstrip(".").split(".") for para in test_paragraphs_list]
-expected_sentences = [para.rstrip(".").split(".") for para in expected_paragraph]
+corrected_text = spell_checker.correct()
 
-# Loop through test paragraphs and perform spell/grammar correction
-for idx, test_sentences_group in enumerate(test_sentences):
-    print(f"\n\n--- Testing Paragraph {idx+1} ---\n")
-
-    for i, sentence in enumerate(test_sentences_group):
-        print(f"\nTest Sentence {i+1}: {sentence.strip()}")
-
-        # Initialize the SpellChecker object
-        spell_checker = SpellChecker(correct_words_file, sentence)
-        corrected_text = spell_checker.correct()
-
-        # Output the corrected text
-        print(f"Corrected Text: {corrected_text.strip()}")
-
-        # Evaluate the spell checker against the expected result
-        print("\n--- Evaluation Results ---")
-        evaluate_spell_checker(corrected_text, expected_sentences[idx][i], corrected_text)
+# Output the corrected text
+print(f"Corrected Text: {corrected_text}")
