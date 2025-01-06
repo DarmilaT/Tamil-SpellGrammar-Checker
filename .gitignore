@@ -1,5 +1,5 @@
 # Ignore Python cache files and folders
 __pycache__/
 *.py[cod]
-# Ignore the Models folder in the specific path
 src/grammar_checker/deepLearning_approach/Models/
+src/grammar_checker/deepLearning_approach/Models/*
