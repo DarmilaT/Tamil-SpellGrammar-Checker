@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 src/grammar_checker/deepLearning_approach/Models/
 src/grammar_checker/deepLearning_approach/Models/*
+src/grammar_checker/deepLearning_approach/Models/grammar_checker_model.h5
