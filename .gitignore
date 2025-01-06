@@ -1,6 +1,9 @@
 # Ignore Python cache files and folders
 __pycache__/
 *.py[cod]
+<<<<<<< HEAD
 src/grammar_checker/deepLearning_approach/Models/
 src/grammar_checker/deepLearning_approach/Models/*
 src/grammar_checker/deepLearning_approach/Models/grammar_checker_model.h5
+=======
+>>>>>>> 757cc1cd0403d1336e16bf1c11653bd4c71efbc8

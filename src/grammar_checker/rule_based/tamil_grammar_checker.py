@@ -17,7 +17,10 @@ test_sentences = [
     "நாம் தினசரி விளையாடுகிறோம்",  # Correct subject-verb, incorrect habitual case
     #"அவள் தினமும் தேநீர் குடிக்கிறாள்",  # Present tense acceptable for habitual case
     "மாணவர்கள் பாடம் படிக்கிறார்கள்",  # Correct subject-verb agreement
+<<<<<<< HEAD
     "அவர்கள் விளையாட்டு விளையாடுகிறேன்"
+=======
+>>>>>>> 757cc1cd0403d1336e16bf1c11653bd4c71efbc8
 ]
 
 if __name__ == "__main__":
